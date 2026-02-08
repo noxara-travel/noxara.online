@@ -132,96 +132,60 @@ footer {
     <h1>NOXARA</h1>
     <div class="est">Est. 2026</div>
 
-    <p data-key="hero_text">
-      Viajes diseñados con criterio, tiempo y precisión.<br>
-      Para quienes entienden que el verdadero lujo es cómo se vive.
-    </p>
+    <p data-key="hero_text"></p>
 
     <a class="btn" data-key="access_btn"
        href="https://wa.me/524621610817?text=Hello%20I%20would%20like%20to%20request%20NOXARA%20ACCESS%20to%20design%20a%20private%20travel%20experience">
-      ACCESO NOXARA
     </a>
   </div>
 </section>
 
 <!-- MANIFEST -->
 <section class="section">
-  <p data-key="manifest_text" style="font-size:22px; letter-spacing:1px;">
-    NOXARA no vende viajes.<br>
-    Diseña experiencias con criterio, tiempo y precisión.<br><br>
-    Para personas que entienden que el lujo no está en el exceso,<br>
-    sino en saber exactamente cuándo, cómo y dónde estar.<br><br>
-    Cada ruta se piensa.<br>
-    Cada decisión tiene intención.
-  </p>
+  <p data-key="manifest_text" style="font-size:22px; letter-spacing:1px;"></p>
 </section>
 
 <!-- ORIGIN -->
 <section class="section" style="padding-top:70px; padding-bottom:70px;">
-  <h2 data-key="origin_title">Una firma en nacimiento</h2>
-  <p data-key="origin_text">
-    NOXARA es una firma privada en sus primeros pasos.<br><br>
-    Nace a partir de años de experiencia en viajes de lujo,
-    concierge internacional y atención personalizada a perfiles exigentes.<br><br>
-    No construimos desde la improvisación,
-    sino desde el criterio adquirido,
-    el tiempo dedicado
-    y la claridad de saber cómo se vive un viaje bien diseñado.
-  </p>
+  <h2 data-key="origin_title"></h2>
+  <p data-key="origin_text"></p>
 </section>
 
-<!-- COLECCIONES (SOLO ES) -->
-<section class="section collection" data-collection-lang="es">
-  <h2>Colecciones</h2>
+<!-- COLLECTIONS -->
+<section class="section">
+  <h2 data-key="collections_title"></h2>
 
   <div class="cards">
 
     <div class="card">
       <h3>Northern Legends</h3>
-      <p>
-        Canadá y Alaska en su expresión más pura.
-        Auroras boreales, glaciares, trenes panorámicos y silencio absoluto.
-      </p>
+      <p data-key="north_desc"></p>
     </div>
 
     <div class="card">
       <h3>Eternal Europe</h3>
-      <p>
-        Ciudades históricas, rutas precisas y experiencias privadas.
-        Europa sin prisas, sin multitudes, sin improvisación.
-      </p>
+      <p data-key="europe_desc"></p>
     </div>
 
     <div class="card">
       <h3>Africa Beyond</h3>
-      <p>
-        Safaris de lujo, lodges remotos y naturaleza intacta.
-        África vivida desde el respeto y la exclusividad.
-      </p>
+      <p data-key="africa_desc"></p>
     </div>
 
     <div class="card">
       <h3>Future & Tradition</h3>
-      <p>
-        Japón, Corea y Asia profunda.
-        Donde la tecnología y la tradición conviven con precisión.
-      </p>
+      <p data-key="asia_desc"></p>
     </div>
 
     <div class="card">
       <h3>Australia Uncovered</h3>
-      <p>
-        Ciudades cosmopolitas, costas infinitas y territorios salvajes.
-        Una forma distinta de llegar al fin del mundo.
-      </p>
+      <p data-key="australia_desc"></p>
     </div>
 
   </div>
 </section>
 
-<footer data-key="footer_text">
-  NOXARA · El mundo, como solo unos pocos lo viven
-</footer>
+<footer data-key="footer_text"></footer>
 
 <!-- SCRIPTS -->
 <script>
@@ -239,11 +203,13 @@ const translations = {
     origin_title: "Una firma en nacimiento",
     origin_text: `NOXARA es una firma privada en sus primeros pasos.<br><br>
                   Nace a partir de años de experiencia en viajes de lujo,
-                  concierge internacional y atención personalizada a perfiles exigentes.<br><br>
-                  No construimos desde la improvisación,
-                  sino desde el criterio adquirido,
-                  el tiempo dedicado
-                  y la claridad de saber cómo se vive un viaje bien diseñado.`,
+                  concierge internacional y atención personalizada a perfiles exigentes.`,
+    collections_title: "Colecciones",
+    north_desc: "Canadá y Alaska en su expresión más pura. Auroras, glaciares y silencio absoluto.",
+    europe_desc: "Ciudades históricas y rutas precisas. Europa sin prisas ni multitudes.",
+    africa_desc: "Safaris de lujo y naturaleza intacta. África vivida con respeto.",
+    asia_desc: "Japón, Corea y Asia profunda. Tradición y tecnología en equilibrio.",
+    australia_desc: "Costas infinitas y territorios salvajes. Una forma distinta de llegar al fin del mundo.",
     footer_text: "NOXARA · El mundo, como solo unos pocos lo viven"
   },
   en: {
@@ -253,17 +219,16 @@ const translations = {
     manifest_text: `NOXARA does not sell trips.<br>
                     It designs experiences with intention, time and precision.<br><br>
                     For those who understand that luxury is not excess,<br>
-                    but knowing exactly when, how and where to be.<br><br>
-                    Every route is considered.<br>
-                    Every decision has intention.`,
+                    but knowing exactly when, how and where to be.`,
     origin_title: "A firm in its early days",
-    origin_text: `NOXARA is a private travel firm in its early stages.<br><br>
-                  Built upon years of experience in luxury travel,
-                  international concierge services and highly personalized attention.<br><br>
-                  We do not build from improvisation,
-                  but from acquired judgment,
-                  dedicated time
-                  and a clear understanding of how a journey should truly feel.`,
+    origin_text: `NOXARA is a private travel firm built on experience,
+                  judgment and highly personalized design.`,
+    collections_title: "Collections",
+    north_desc: "Canada and Alaska in their purest form. Auroras, glaciers and absolute silence.",
+    europe_desc: "Historic cities and precise routes. Europe without rush or crowds.",
+    africa_desc: "Luxury safaris and untouched nature. Africa experienced with respect.",
+    asia_desc: "Japan, Korea and deep Asia. Where tradition meets precision.",
+    australia_desc: "Infinite coastlines and wild territories. A different way to reach the end of the world.",
     footer_text: "NOXARA · The world, as only a few experience it"
   }
 };
@@ -276,11 +241,6 @@ function switchLanguage(lang) {
 
   document.querySelectorAll(".lang-switch span").forEach(el => {
     el.classList.toggle("active", el.dataset.lang === lang);
-  });
-
-  document.querySelectorAll("[data-collection-lang]").forEach(section => {
-    section.style.display =
-      section.dataset.collectionLang === lang ? "" : "none";
   });
 
   document.documentElement.lang = lang;
