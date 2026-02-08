@@ -109,14 +109,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Ghost note */
-.ghost-note {
-  margin-top: 60px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  opacity: 0.35;
-}
-
 footer {
   padding: 50px;
   text-align: center;
@@ -178,37 +170,53 @@ footer {
   </p>
 </section>
 
-<!-- COLECCIONES -->
-<section class="section">
-  <h2 data-key="collections_title">Colecciones</h2>
+<!-- COLECCIONES (SOLO ES) -->
+<section class="section collection" data-collection-lang="es">
+  <h2>Colecciones</h2>
 
   <div class="cards">
 
-    <!-- Español -->
-    <div class="card collection" data-collection-lang="es">
-      <h3>Raíz I</h3>
-      <p>Experiencias que nacen desde el origen y la memoria.</p>
+    <div class="card">
+      <h3>Northern Legends</h3>
+      <p>
+        Canadá y Alaska en su expresión más pura.
+        Auroras boreales, glaciares, trenes panorámicos y silencio absoluto.
+      </p>
     </div>
 
-    <!-- Inglés -->
-    <div class="card collection" data-collection-lang="en">
-      <h3>Private Series 01</h3>
-      <p>Selected journeys available by alignment.</p>
+    <div class="card">
+      <h3>Eternal Europe</h3>
+      <p>
+        Ciudades históricas, rutas precisas y experiencias privadas.
+        Europa sin prisas, sin multitudes, sin improvisación.
+      </p>
     </div>
 
-    <!-- Ambos -->
-    <div class="card collection" data-collection-lang="both">
-      <h3>Signature Works</h3>
-      <p>Experiencias que definen la firma NOXARA.</p>
+    <div class="card">
+      <h3>Africa Beyond</h3>
+      <p>
+        Safaris de lujo, lodges remotos y naturaleza intacta.
+        África vivida desde el respeto y la exclusividad.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Future & Tradition</h3>
+      <p>
+        Japón, Corea y Asia profunda.
+        Donde la tecnología y la tradición conviven con precisión.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Australia Uncovered</h3>
+      <p>
+        Ciudades cosmopolitas, costas infinitas y territorios salvajes.
+        Una forma distinta de llegar al fin del mundo.
+      </p>
     </div>
 
   </div>
-
-  <!-- Nota fantasma solo ES -->
-  <div class="ghost-note collection" data-collection-lang="es">
-    Algunas piezas permanecen en resguardo privado.
-  </div>
-
 </section>
 
 <footer data-key="footer_text">
@@ -236,7 +244,6 @@ const translations = {
                   sino desde el criterio adquirido,
                   el tiempo dedicado
                   y la claridad de saber cómo se vive un viaje bien diseñado.`,
-    collections_title: "Colecciones",
     footer_text: "NOXARA · El mundo, como solo unos pocos lo viven"
   },
   en: {
@@ -257,16 +264,11 @@ const translations = {
                   but from acquired judgment,
                   dedicated time
                   and a clear understanding of how a journey should truly feel.`,
-    collections_title: "Collections",
     footer_text: "NOXARA · The world, as only a few experience it"
   }
 };
 
-let currentLang = "es";
-
 function switchLanguage(lang) {
-  currentLang = lang;
-
   document.querySelectorAll("[data-key]").forEach(el => {
     const key = el.dataset.key;
     if (translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -276,9 +278,9 @@ function switchLanguage(lang) {
     el.classList.toggle("active", el.dataset.lang === lang);
   });
 
-  document.querySelectorAll(".collection").forEach(el => {
-    const allowed = el.dataset.collectionLang;
-    el.style.display = (allowed === "both" || allowed === lang) ? "" : "none";
+  document.querySelectorAll("[data-collection-lang]").forEach(section => {
+    section.style.display =
+      section.dataset.collectionLang === lang ? "" : "none";
   });
 
   document.documentElement.lang = lang;
