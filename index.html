@@ -109,6 +109,14 @@ body {
   margin-bottom: 20px;
 }
 
+/* Ghost note */
+.ghost-note {
+  margin-top: 60px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.35;
+}
+
 footer {
   padding: 50px;
   text-align: center;
@@ -149,10 +157,8 @@ footer {
   <p data-key="manifest_text" style="font-size:22px; letter-spacing:1px;">
     NOXARA no vende viajes.<br>
     Diseña experiencias con criterio, tiempo y precisión.<br><br>
-
     Para personas que entienden que el lujo no está en el exceso,<br>
     sino en saber exactamente cuándo, cómo y dónde estar.<br><br>
-
     Cada ruta se piensa.<br>
     Cada decisión tiene intención.
   </p>
@@ -172,14 +178,44 @@ footer {
   </p>
 </section>
 
-<!-- TODO LO DEMÁS (COLECCIONES, CÓMO TRABAJAMOS, ETC.) -->
-<!-- SE MANTIENE EXACTAMENTE IGUAL QUE TU CÓDIGO ORIGINAL -->
+<!-- COLECCIONES -->
+<section class="section">
+  <h2 data-key="collections_title">Colecciones</h2>
+
+  <div class="cards">
+
+    <!-- Español -->
+    <div class="card collection" data-collection-lang="es">
+      <h3>Raíz I</h3>
+      <p>Experiencias que nacen desde el origen y la memoria.</p>
+    </div>
+
+    <!-- Inglés -->
+    <div class="card collection" data-collection-lang="en">
+      <h3>Private Series 01</h3>
+      <p>Selected journeys available by alignment.</p>
+    </div>
+
+    <!-- Ambos -->
+    <div class="card collection" data-collection-lang="both">
+      <h3>Signature Works</h3>
+      <p>Experiencias que definen la firma NOXARA.</p>
+    </div>
+
+  </div>
+
+  <!-- Nota fantasma solo ES -->
+  <div class="ghost-note collection" data-collection-lang="es">
+    Algunas piezas permanecen en resguardo privado.
+  </div>
+
+</section>
 
 <footer data-key="footer_text">
   NOXARA · El mundo, como solo unos pocos lo viven
 </footer>
 
-<!-- LANGUAGE SCRIPT -->
+<!-- SCRIPTS -->
 <script>
 const translations = {
   es: {
@@ -200,6 +236,7 @@ const translations = {
                   sino desde el criterio adquirido,
                   el tiempo dedicado
                   y la claridad de saber cómo se vive un viaje bien diseñado.`,
+    collections_title: "Colecciones",
     footer_text: "NOXARA · El mundo, como solo unos pocos lo viven"
   },
   en: {
@@ -220,19 +257,28 @@ const translations = {
                   but from acquired judgment,
                   dedicated time
                   and a clear understanding of how a journey should truly feel.`,
+    collections_title: "Collections",
     footer_text: "NOXARA · The world, as only a few experience it"
   }
 };
 
+let currentLang = "es";
+
 function switchLanguage(lang) {
+  currentLang = lang;
+
   document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.getAttribute("data-key");
+    const key = el.dataset.key;
     if (translations[lang][key]) el.innerHTML = translations[lang][key];
   });
 
   document.querySelectorAll(".lang-switch span").forEach(el => {
-    el.classList.remove("active");
-    if (el.dataset.lang === lang) el.classList.add("active");
+    el.classList.toggle("active", el.dataset.lang === lang);
+  });
+
+  document.querySelectorAll(".collection").forEach(el => {
+    const allowed = el.dataset.collectionLang;
+    el.style.display = (allowed === "both" || allowed === lang) ? "" : "none";
   });
 
   document.documentElement.lang = lang;
@@ -241,6 +287,8 @@ function switchLanguage(lang) {
 document.querySelectorAll(".lang-switch span").forEach(btn => {
   btn.addEventListener("click", () => switchLanguage(btn.dataset.lang));
 });
+
+switchLanguage("es");
 </script>
 
 </body>
