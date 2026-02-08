@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>NOXARA — Viajes de Lujo</title>
+<title>NOXARA — Private Travel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -17,6 +17,30 @@ body {
   color: #f5f5f5;
 }
 
+/* Language switch */
+.lang-switch {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.lang-switch span {
+  margin: 0 4px;
+  transition: 0.3s;
+}
+
+.lang-switch span:hover,
+.lang-switch .active {
+  opacity: 1;
+  color: #d4af37;
+}
+
+/* Hero */
 .hero {
   min-height: 100vh;
   background:
@@ -43,6 +67,7 @@ body {
   opacity: 0.9;
 }
 
+/* Button */
 .btn {
   display: inline-block;
   margin-top: 40px;
@@ -59,6 +84,7 @@ body {
   color: #0b0c10;
 }
 
+/* Sections */
 .section {
   padding: 110px 10%;
   text-align: center;
@@ -78,6 +104,7 @@ body {
   opacity: 0.85;
 }
 
+/* Cards */
 .cards {
   margin-top: 80px;
   display: grid;
@@ -108,21 +135,32 @@ footer {
 
 <body>
 
+<!-- Language Switch -->
+<div class="lang-switch">
+  <span data-lang="es" class="active">ES</span> |
+  <span data-lang="en">EN</span>
+</div>
+
+<!-- HERO -->
 <section class="hero">
   <div>
     <h1>NOXARA</h1>
-    <p>
+
+    <p data-key="hero_text">
       Viajes diseñados con criterio, tiempo y precisión.<br>
       Para quienes entienden que el verdadero lujo es cómo se vive.
     </p>
 
-    <a class="btn" href="https://wa.me/524621610817?text=Hola%20me%20gustaría%20solicitar%20ACCESO%20NOXARA%20para%20diseñar%20una%20experiencia%20de%20viaje">
-  ACCESO NOXARA
-</a>
+    <a class="btn" data-key="access_btn"
+       href="https://wa.me/524621610817?text=Hello%20I%20would%20like%20to%20request%20NOXARA%20ACCESS%20to%20design%20a%20private%20travel%20experience">
+      ACCESO NOXARA
+    </a>
   </div>
 </section>
+
+<!-- MANIFEST -->
 <section class="section">
-  <p style="font-size:22px; letter-spacing:1px;">
+  <p data-key="manifest_text" style="font-size:22px; letter-spacing:1px;">
     NOXARA no vende viajes.<br>
     Diseña experiencias con criterio, tiempo y precisión.<br><br>
 
@@ -133,142 +171,89 @@ footer {
     Cada decisión tiene intención.
   </p>
 </section>
-<section class="section" style="padding-top:80px; padding-bottom:80px;">
-  <h2>Viajar no es reservar.<br>Es diseñar.</h2>
 
-  <p>
+<!-- PHILOSOPHY -->
+<section class="section" style="padding-top:80px; padding-bottom:80px;">
+  <h2 data-key="design_title">Viajar no es reservar.<br>Es diseñar.</h2>
+
+  <p data-key="design_text">
     NOXARA no ofrece viajes.<br>
     Diseña experiencias con intención.<br><br>
 
     Trabajamos con personas que valoran el tiempo, el silencio y la certeza de que todo
     está resuelto antes de partir.<br><br>
 
-    Canadá. Alaska. Europa. Asia. África. Australia.<br>
     Destinos que no se improvisan.
   </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Viajes a Medida</h3>
-      <p>
-        No hay plantillas. No hay prisas.<br>
-        Cada ruta responde a una sola pregunta: ¿cómo quieres vivirlo?
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Experiencias Exclusivas</h3>
-      <p>
-        Lugares remotos, acceso privado y decisiones tomadas con antelación.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Concierge NOXARA</h3>
-      <p>
-        Una persona. Un criterio. Disponible cuando importa.
-      </p>
-    </div>
-  </div>
 </section>
 
-<section class="section">
-  <h2>Colecciones NOXARA</h2>
-
-  <p>
-    Cada colección representa una forma distinta de explorar el mundo.
-    Diseñadas con criterio, tiempo y acceso.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Northern Legends</h3>
-      <p>
-        Canadá y Alaska en su expresión más pura.
-        Auroras boreales, glaciares, trenes panorámicos y silencio absoluto.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Eternal Europe</h3>
-      <p>
-        Ciudades históricas, rutas precisas y experiencias privadas.
-        Europa sin prisas, sin multitudes, sin improvisación.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Africa Beyond</h3>
-      <p>
-        Safaris de lujo, lodges remotos y naturaleza intacta.
-        África vivida desde el respeto y la exclusividad.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Future & Tradition</h3>
-      <p>
-        Japón, Corea y Asia profunda.
-        Donde la tecnología y la tradición conviven con precisión.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Australia Uncovered</h3>
-      <p>
-        Ciudades cosmopolitas, costas infinitas y territorios salvajes.
-        Una forma distinta de llegar al fin del mundo.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Cómo trabajamos</h2>
-
-  <p>
-    NOXARA opera como una firma privada.
-    Cada experiencia se diseña de forma meticulosa, sin plantillas ni automatismos.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>1. Entendemos</h3>
-      <p>
-        Antes de hablar de destinos, entendemos a la persona.
-        Cómo viaja, qué valora y qué espera sentir.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>2. Diseñamos</h3>
-      <p>
-        Construimos una ruta alineada a ese perfil.
-        Hoteles, traslados, tiempos y experiencias con intención.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>3. Ajustamos</h3>
-      <p>
-        Afinamos cada detalle hasta que todo tenga sentido.
-        Sin prisas. Sin improvisación.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>4. Acompañamos</h3>
-      <p>
-        Durante el viaje, NOXARA está presente.
-        Una persona real, disponible cuando importa.
-      </p>
-    </div>
-  </div>
-</section>
-
-<footer>
+<footer data-key="footer_text">
   NOXARA · El mundo, como solo unos pocos lo viven
 </footer>
+
+<!-- LANGUAGE SCRIPT -->
+<script>
+const translations = {
+  es: {
+    hero_text: `Viajes diseñados con criterio, tiempo y precisión.<br>
+                Para quienes entienden que el verdadero lujo es cómo se vive.`,
+    access_btn: "ACCESO NOXARA",
+    manifest_text: `NOXARA no vende viajes.<br>
+                    Diseña experiencias con criterio, tiempo y precisión.<br><br>
+                    Para personas que entienden que el lujo no está en el exceso,<br>
+                    sino en saber exactamente cuándo, cómo y dónde estar.<br><br>
+                    Cada ruta se piensa.<br>
+                    Cada decisión tiene intención.`,
+    design_title: "Viajar no es reservar.<br>Es diseñar.",
+    design_text: `NOXARA no ofrece viajes.<br>
+                  Diseña experiencias con intención.<br><br>
+                  Trabajamos con personas que valoran el tiempo, el silencio y la certeza de que todo
+                  está resuelto antes de partir.<br><br>
+                  Destinos que no se improvisan.`,
+    footer_text: "NOXARA · El mundo, como solo unos pocos lo viven"
+  },
+  en: {
+    hero_text: `Journeys designed with intention, time and precision.<br>
+                For those who understand that true luxury is how it is lived.`,
+    access_btn: "NOXARA ACCESS",
+    manifest_text: `NOXARA does not sell trips.<br>
+                    It designs experiences with intention, time and precision.<br><br>
+                    For those who understand that luxury is not excess,<br>
+                    but knowing exactly when, how and where to be.<br><br>
+                    Every route is considered.<br>
+                    Every decision has intention.`,
+    design_title: "Travel is not booking.<br>It is design.",
+    design_text: `NOXARA does not offer trips.<br>
+                  It designs experiences with intention.<br><br>
+                  We work with people who value time, silence and the certainty that everything
+                  is resolved before departure.<br><br>
+                  Destinations that are never improvised.`,
+    footer_text: "NOXARA · The world, as only a few experience it"
+  }
+};
+
+function switchLanguage(lang) {
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll(".lang-switch span").forEach(el => {
+    el.classList.remove("active");
+    if (el.dataset.lang === lang) el.classList.add("active");
+  });
+
+  document.documentElement.lang = lang;
+}
+
+document.querySelectorAll(".lang-switch span").forEach(btn => {
+  btn.addEventListener("click", () => {
+    switchLanguage(btn.dataset.lang);
+  });
+});
+</script>
 
 </body>
 </html>
