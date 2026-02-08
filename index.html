@@ -60,6 +60,13 @@ body {
   margin-bottom: 10px;
 }
 
+.est {
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
 .hero p {
   font-size: 22px;
   max-width: 720px;
@@ -104,26 +111,6 @@ body {
   opacity: 0.85;
 }
 
-/* Cards */
-.cards {
-  margin-top: 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-}
-
-.card {
-  background: #111;
-  border: 1px solid #222;
-  padding: 50px 35px;
-}
-
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
 footer {
   padding: 50px;
   text-align: center;
@@ -145,6 +132,7 @@ footer {
 <section class="hero">
   <div>
     <h1>NOXARA</h1>
+    <div class="est">Est. 2026</div>
 
     <p data-key="hero_text">
       Viajes diseñados con criterio, tiempo y precisión.<br>
@@ -169,6 +157,23 @@ footer {
 
     Cada ruta se piensa.<br>
     Cada decisión tiene intención.
+  </p>
+</section>
+
+<!-- ORIGIN -->
+<section class="section" style="padding-top:70px; padding-bottom:70px;">
+  <h2 data-key="origin_title">Una firma en nacimiento</h2>
+
+  <p data-key="origin_text">
+    NOXARA es una firma privada en sus primeros pasos.<br><br>
+
+    Nace a partir de años de experiencia en viajes de lujo,
+    concierge internacional y atención personalizada a perfiles exigentes.<br><br>
+
+    No construimos desde la improvisación,
+    sino desde el criterio adquirido,
+    el tiempo dedicado
+    y la claridad de saber cómo se vive un viaje bien diseñado.
   </p>
 </section>
 
@@ -204,6 +209,14 @@ const translations = {
                     sino en saber exactamente cuándo, cómo y dónde estar.<br><br>
                     Cada ruta se piensa.<br>
                     Cada decisión tiene intención.`,
+    origin_title: "Una firma en nacimiento",
+    origin_text: `NOXARA es una firma privada en sus primeros pasos.<br><br>
+                  Nace a partir de años de experiencia en viajes de lujo,
+                  concierge internacional y atención personalizada a perfiles exigentes.<br><br>
+                  No construimos desde la improvisación,
+                  sino desde el criterio adquirido,
+                  el tiempo dedicado
+                  y la claridad de saber cómo se vive un viaje bien diseñado.`,
     design_title: "Viajar no es reservar.<br>Es diseñar.",
     design_text: `NOXARA no ofrece viajes.<br>
                   Diseña experiencias con intención.<br><br>
@@ -222,6 +235,14 @@ const translations = {
                     but knowing exactly when, how and where to be.<br><br>
                     Every route is considered.<br>
                     Every decision has intention.`,
+    origin_title: "A firm in its early days",
+    origin_text: `NOXARA is a private travel firm in its early stages.<br><br>
+                  It is built upon years of experience in luxury travel,
+                  international concierge services and highly personalized attention.<br><br>
+                  We do not build from improvisation,
+                  but from acquired judgment,
+                  dedicated time
+                  and a clear understanding of how a journey should truly feel.`,
     design_title: "Travel is not booking.<br>It is design.",
     design_text: `NOXARA does not offer trips.<br>
                   It designs experiences with intention.<br><br>
