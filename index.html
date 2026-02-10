@@ -102,11 +102,45 @@ body {
   background: #111;
   border: 1px solid #222;
   padding: 50px 35px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.card:hover {
+  border-color: #d4af37;
+  transform: translateY(-6px);
 }
 .card h3 {
   font-family: 'Playfair Display', serif;
   letter-spacing: 2px;
   margin-bottom: 20px;
+}
+
+/* PDF Overlay */
+.pdf-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5,5,5,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.pdf-overlay iframe {
+  width: 85%;
+  height: 90%;
+  border: none;
+}
+.pdf-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 26px;
+  color: #d4af37;
+  cursor: pointer;
+  letter-spacing: 3px;
 }
 
 footer {
@@ -131,18 +165,16 @@ footer {
   <div>
     <h1>NOXARA</h1>
     <div class="est">Est. 2026</div>
-
     <p data-key="hero_text"></p>
-
     <a class="btn" data-key="access_btn"
-       href="https://wa.me/524621610817?text=Hello%20I%20would%20like%20to%20request%20NOXARA%20ACCESS%20to%20design%20a%20private%20travel%20experience">
+       href="https://wa.me/524621610817?text=Hello%20I%20would%20like%20to%20request%20NOXARA%20ACCESS">
     </a>
   </div>
 </section>
 
 <!-- MANIFEST -->
 <section class="section">
-  <p data-key="manifest_text" style="font-size:22px; letter-spacing:1px;"></p>
+  <p data-key="manifest_text" style="font-size:22px;"></p>
 </section>
 
 <!-- ORIGIN -->
@@ -157,28 +189,28 @@ footer {
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card" onclick="openPDF('/pdf/NORTHERN-LEGENDS.pdf')">
       <h3>Northern Legends</h3>
       <p data-key="north_desc"></p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openPDF('/pdf/ETERNAL-EUROPE.pdf')">
       <h3>Eternal Europe</h3>
       <p data-key="europe_desc"></p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openPDF('/pdf/AFRICA-BEYOND.pdf')">
       <h3>Africa Beyond</h3>
       <p data-key="africa_desc"></p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openPDF('/pdf/FUTURE-TRADITION.pdf')">
       <h3>Future & Tradition</h3>
       <p data-key="asia_desc"></p>
     </div>
 
-    <div class="card">
-      <h3>Australia Uncovered</h3>
+    <div class="card" onclick="openPDF('/pdf/AUSTRALIA-ESSENTIALS.pdf')">
+      <h3>Australia Essentials</h3>
       <p data-key="australia_desc"></p>
     </div>
 
@@ -187,7 +219,12 @@ footer {
 
 <footer data-key="footer_text"></footer>
 
-<!-- SCRIPTS -->
+<!-- PDF OVERLAY -->
+<div class="pdf-overlay" id="pdfOverlay">
+  <div class="pdf-close" onclick="closePDF()">✕ CLOSE</div>
+  <iframe id="pdfFrame"></iframe>
+</div>
+
 <script>
 const translations = {
   es: {
@@ -217,18 +254,16 @@ const translations = {
                 For those who understand that true luxury is how it is lived.`,
     access_btn: "NOXARA ACCESS",
     manifest_text: `NOXARA does not sell trips.<br>
-                    It designs experiences with intention, time and precision.<br><br>
-                    For those who understand that luxury is not excess,<br>
-                    but knowing exactly when, how and where to be.`,
+                    It designs experiences with intention, time and precision.`,
     origin_title: "A firm in its early days",
     origin_text: `NOXARA is a private travel firm built on experience,
                   judgment and highly personalized design.`,
     collections_title: "Collections",
-    north_desc: "Canada and Alaska in their purest form. Auroras, glaciers and absolute silence.",
+    north_desc: "Canada and Alaska in their purest form.",
     europe_desc: "Historic cities and precise routes. Europe without rush or crowds.",
-    africa_desc: "Luxury safaris and untouched nature. Africa experienced with respect.",
-    asia_desc: "Japan, Korea and deep Asia. Where tradition meets precision.",
-    australia_desc: "Infinite coastlines and wild territories. A different way to reach the end of the world.",
+    africa_desc: "Luxury safaris and untouched nature.",
+    asia_desc: "Japan, Korea and deep Asia.",
+    australia_desc: "Infinite coastlines and wild territories.",
     footer_text: "NOXARA · The world, as only a few experience it"
   }
 };
@@ -238,11 +273,9 @@ function switchLanguage(lang) {
     const key = el.dataset.key;
     if (translations[lang][key]) el.innerHTML = translations[lang][key];
   });
-
   document.querySelectorAll(".lang-switch span").forEach(el => {
     el.classList.toggle("active", el.dataset.lang === lang);
   });
-
   document.documentElement.lang = lang;
 }
 
@@ -251,6 +284,16 @@ document.querySelectorAll(".lang-switch span").forEach(btn => {
 });
 
 switchLanguage("es");
+
+function openPDF(url) {
+  document.getElementById("pdfFrame").src = url;
+  document.getElementById("pdfOverlay").style.display = "flex";
+}
+
+function closePDF() {
+  document.getElementById("pdfOverlay").style.display = "none";
+  document.getElementById("pdfFrame").src = "";
+}
 </script>
 
 </body>
